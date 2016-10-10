@@ -3,8 +3,9 @@ MAINTAINER Jaka Hudoklin <jakahudoklin@gmail.com>
 
 # Install openvpn
 RUN echo "http://dl-4.alpinelinux.org/alpine/edge/community/" >> /etc/apk/repositories && \
-    apk add --update openvpn iptables bash python && \
+    apk add --update openvpn iptables bash python curl && \
     apk add py-pip && \
+    pip install shyaml && \
     rm -rf /tmp/* /var/tmp/* /var/cache/apk/*
 
 # Configuration files

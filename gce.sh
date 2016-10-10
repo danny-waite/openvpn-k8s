@@ -29,6 +29,7 @@ function convert_cidr {
 SERVICE_CLUSTER_IP_RANGE=$(echo "${KUBE_ENV}" | shyaml get-value "SERVICE_CLUSTER_IP_RANGE")
 CLUSTER_IP_RANGE=$(echo "${KUBE_ENV}" | shyaml get-value "CLUSTER_IP_RANGE")
 DNS_SERVER_IP=$(echo "${KUBE_ENV}" | shyaml get-value "DNS_SERVER_IP")
+DNS_DOMAIN=$(echo "${KUBE_ENV}" | shyaml get-value "DNS_DOMAIN")
 
 SERVICE_SUBNET=$(parse_subnet ${SERVICE_CLUSTER_IP_RANGE})
 SERVICE_NETWORK=`echo ${SERVICE_CLUSTER_IP_RANGE} | cut -d'/' -f1`

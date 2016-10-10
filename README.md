@@ -11,6 +11,8 @@
 
 Dockerfile to run [openvpn](https://openvpn.net/) inside [kubernetes](http://kubernetes.io/).
 
+> NOTE this fork attempts to detect service/pod subnets and DNS address/domain when hosted on Google Container Engine
+
 # Contributing
 
 If you find this image useful you can help by doing one of the following:
