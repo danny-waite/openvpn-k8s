@@ -3,7 +3,8 @@ MAINTAINER Jaka Hudoklin <jakahudoklin@gmail.com>
 
 # Install openvpn
 RUN echo "http://dl-4.alpinelinux.org/alpine/edge/community/" >> /etc/apk/repositories && \
-    apk add --update openvpn iptables bash && \
+    apk add --update openvpn iptables bash python && \
+    apk add py-pip && \
     rm -rf /tmp/* /var/tmp/* /var/cache/apk/*
 
 # Configuration files
@@ -18,5 +19,6 @@ WORKDIR /etc/openvpn
 
 # entry point takes care of setting conf values
 COPY entrypoint.sh /sbin/entrypoint.sh
+COPY gce.sh /sbin/gce.sh
 
 CMD ["/sbin/entrypoint.sh"]
